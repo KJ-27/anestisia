@@ -28,6 +28,7 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
             color: var(--dark);
             line-height: 1.6;
+            font-size: 16px; /* Base font size */
         }
         
         .container {
@@ -39,7 +40,7 @@
         header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 2rem 0;
+            padding: 1rem 0; /* Reduced padding */
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -50,6 +51,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; /* Allow wrapping */
         }
         
         .logo {
@@ -59,17 +61,21 @@
         }
         
         .logo i {
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
         
         .logo h1 {
-            font-size: 2rem;
+            font-size: 1.5rem; /* Smaller font for mobile */
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 10px; /* Reduced gap */
+            flex-wrap: wrap; /* Allow wrapping */
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
         }
         
         nav a {
@@ -77,8 +83,9 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
-            padding: 8px 15px;
+            padding: 8px 12px; /* Adjusted padding */
             border-radius: 20px;
+            font-size: 0.9rem;
         }
         
         nav a:hover {
@@ -86,30 +93,30 @@
         }
         
         .hero {
-            padding: 3rem 0;
+            padding: 2rem 0; /* Reduced padding */
             text-align: center;
         }
         
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: 2rem; /* Smaller font for mobile */
             margin-bottom: 1rem;
             color: var(--primary);
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1rem; /* Smaller font */
             max-width: 800px;
             margin: 0 auto;
         }
         
         .section {
-            padding: 3rem 0;
+            padding: 2rem 0; /* Reduced padding */
         }
         
         .section-title {
             text-align: center;
             margin-bottom: 2rem;
-            font-size: 2rem;
+            font-size: 1.8rem; /* Smaller font */
             color: var(--primary);
             position: relative;
             display: inline-block;
@@ -122,7 +129,7 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 80px; /* Slightly smaller */
             height: 4px;
             background: var(--secondary);
             border-radius: 2px;
@@ -130,15 +137,15 @@
         
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted min-width */
+            gap: 20px; /* Reduced gap */
             margin-top: 2rem;
         }
         
         .card {
             background: white;
             border-radius: 15px;
-            padding: 25px;
+            padding: 20px; /* Reduced padding */
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
             position: relative;
@@ -156,7 +163,7 @@
         }
         
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px); /* Reduced movement */
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
@@ -176,26 +183,16 @@
             justify-content: center;
             color: white;
             font-size: 1.5rem;
+            flex-shrink: 0; /* Prevent shrinking */
         }
         
-        .sedation-icon {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .general-icon {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-        
-        .regional-icon {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-        
-        .local-icon {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        }
+        .sedation-icon { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .general-icon { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .regional-icon { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .local-icon { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
         
         .card-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem; /* Smaller font */
             color: var(--dark);
         }
         
@@ -227,18 +224,23 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: block; /* Changed to block */
+            overflow-x: auto; /* Added horizontal scroll */
+            -webkit-overflow-scrolling: touch; /* Smooth scroll for iOS */
         }
         
         .drug-table th {
             background: var(--primary);
             color: white;
-            padding: 15px;
+            padding: 12px 10px; /* Adjusted padding */
             text-align: left;
+            white-space: nowrap; /* Prevent text wrapping */
         }
         
         .drug-table td {
-            padding: 15px;
+            padding: 12px 10px; /* Adjusted padding */
             border-bottom: 1px solid #eee;
+            white-space: nowrap; /* Prevent text wrapping */
         }
         
         .drug-table tr:last-child td {
@@ -268,33 +270,25 @@
             height: 100%;
             border-radius: 5px;
         }
-        
-        .minimal-fill {
-            width: 25%;
-            background: #28a745;
-        }
-        
-        .moderate-fill {
-            width: 60%;
-            background: #ffc107;
-        }
-        
-        .deep-fill {
-            width: 90%;
-            background: #dc3545;
-        }
+        .minimal-fill { width: 25%; background: #28a745; }
+        .moderate-fill { width: 60%; background: #ffc107; }
+        .deep-fill { width: 90%; background: #dc3545; }
         
         .tabs {
             display: flex;
             margin-bottom: 20px;
             border-bottom: 2px solid #eee;
+            overflow-x: auto; /* Allow tabs to scroll */
+            -webkit-overflow-scrolling: touch;
         }
         
         .tab {
-            padding: 10px 20px;
+            padding: 10px 15px; /* Adjusted padding */
             cursor: pointer;
             border-bottom: 3px solid transparent;
             transition: all 0.3s ease;
+            white-space: nowrap; /* Prevent tab text wrapping */
+            flex-shrink: 0;
         }
         
         .tab.active {
@@ -414,24 +408,97 @@
             background: var(--secondary);
             transform: scale(1.1);
         }
-        
+
+        /* --- Media Queries for Responsiveness --- */
+
+        /* Tablets and smaller desktops */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                gap: 20px;
+                text-align: center;
             }
             
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+
             nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
+                margin-top: 15px;
             }
             
             .hero h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
             }
             
             .cards-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Single column */
+            }
+            
+            .comparison {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+        /* Mobile phones */
+        @media (max-width: 480px) {
+            body {
+                font-size: 15px; /* Slightly smaller base font */
+            }
+            
+            .container {
+                padding: 0 15px; /* Less padding on sides */
+            }
+            
+            .logo i {
+                font-size: 1.8rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            nav a {
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+            
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+            
+            .card-title {
+                font-size: 1.2rem;
+            }
+            
+            .card-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .comparison-item {
+                padding: 15px;
+            }
+            
+            .comparison-item i {
+                font-size: 1.5rem;
+            }
+            
+            .drug-table th, .drug-table td {
+                padding: 8px 6px;
+                font-size: 0.85rem;
             }
         }
         
